@@ -47,7 +47,7 @@ with open(f2, "rb") as mid: # For Second PAK File
         fileB2 = mid.tell()  # Current Position   
         mid.seek(int.from_bytes(fileO2, "little"), os.SEEK_SET) # Seek the offset
         fileByt2 = mid.read(int.from_bytes(fileS2, "little")) # Read the bytes by the file size
-        with open(os.path.join(folder2, nFile2), "wb") as fin: # For End
+        with open(os.path.join(folder2, nFile2), "wb") as fin: # For Final
             fin.write(fileByt2) # Write the file data
 
         with open(os.path.join(folder2, repack2), "ab") as rep2: # Creating the repack file
