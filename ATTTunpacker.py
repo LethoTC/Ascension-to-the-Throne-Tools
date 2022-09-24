@@ -4,13 +4,14 @@ f1 = "Resource0.pak" # First PAK File
 f2 = "Resource1.pak" # Second PAK File
 folder1 = "PAK0" # PAK0 Folder
 folder2 = "PAK1" # PAK1 Folder
-
+os.mkdir(folder1) # Create Folder
+os.mkdir(folder2) # Create Folder
 repack1 = "FileData.rep" # For Repacking
 repack2 = "FileData.rep" # For Repacking
 with open(f1, "rb") as beg: # For Beginning
-    if os.path.isfile(folder1+'/'+repack1):
-        os.remove(folder1+'/'+repack1)
-        print(repack1, 'deleted in', folder1)
+    if os.path.isfile(folder1+'/'+repack1): # Check to see if the repack.rep file exists
+        os.remove(folder1+'/'+repack1) # If it does delete it
+        print(repack1, 'deleted in', folder1) # Print the result
         
     magic = beg.read(4) # GRES is the magic
     unk = beg.read(4) # Not sure of the following bytes
@@ -35,6 +36,9 @@ with open(f1, "rb") as beg: # For Beginning
         beg.seek(fileB) # Seek fileB
 
 with open(f2, "rb") as mid: # For Second PAK File
+    if os.path.isfile(folder2+'/'+repack2): # Check to see if the repack.rep file exists
+        os.remove(folder2+'/'+repack2) # If it does delete it
+        print(repack1, 'deleted in', folder1) # Print the result
     magic2 = mid.read(4) # GRES is the magic
     unk2 = mid.read(4) # Not sure of the following bytes
     fileC2 = mid.read(4) # File Count
