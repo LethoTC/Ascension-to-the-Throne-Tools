@@ -4,7 +4,7 @@ import sys
 f1 = "Resource0.pak" # First PAK File
 f2 = "Resource1.pak" # Second PAK File
 folder1 = "PAK0" # PAK0 Folder
-folder2 = "PAK1" # PAK! Folder
+folder2 = "PAK1" # PAK1 Folder
 os.mkdir(folder1) # Create Folder
 os.mkdir(folder2) # Create Folder
 repack1 = "FileData.rep" # For Repacking
