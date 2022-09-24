@@ -1,5 +1,4 @@
 import os
-import sys
 
 f1 = "Resource0.pak" # First PAK File
 f2 = "Resource1.pak" # Second PAK File
