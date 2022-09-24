@@ -1,14 +1,18 @@
 import os
+import sys
 
 f1 = "Resource0.pak" # First PAK File
 f2 = "Resource1.pak" # Second PAK File
 folder1 = "PAK0" # PAK0 Folder
 folder2 = "PAK1" # PAK1 Folder
-os.mkdir(folder1) # Create Folder
-os.mkdir(folder2) # Create Folder
+
 repack1 = "FileData.rep" # For Repacking
 repack2 = "FileData.rep" # For Repacking
 with open(f1, "rb") as beg: # For Beginning
+    if os.path.isfile(folder1+'/'+repack1):
+        os.remove(folder1+'/'+repack1)
+        print(repack1, 'deleted in', folder1)
+        
     magic = beg.read(4) # GRES is the magic
     unk = beg.read(4) # Not sure of the following bytes
     fileC = beg.read(4) # File Count
@@ -24,7 +28,6 @@ with open(f1, "rb") as beg: # For Beginning
         fileByt = beg.read(int.from_bytes(fileS, "little")) # Read the bytes by the file size
         with open(os.path.join(folder1, nFile), "wb") as end: # For End
             end.write(fileByt) # Write the file data
-
         with open(os.path.join(folder1, repack1), "ab") as rep: # Creating the repack file
             rep.write(fileN) # Store the original 128 bytes
             rep.write(fileO) # Store the original File Offsets
@@ -46,7 +49,7 @@ with open(f2, "rb") as mid: # For Second PAK File
         fileB2 = mid.tell()  # Current Position   
         mid.seek(int.from_bytes(fileO2, "little"), os.SEEK_SET) # Seek the offset
         fileByt2 = mid.read(int.from_bytes(fileS2, "little")) # Read the bytes by the file size
-        with open(os.path.join(folder2, nFile2), "wb") as fin: # For Final
+        with open(os.path.join(folder2, nFile2), "wb") as fin: # For End
             fin.write(fileByt2) # Write the file data
 
         with open(os.path.join(folder2, repack2), "ab") as rep2: # Creating the repack file
