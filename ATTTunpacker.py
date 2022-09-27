@@ -40,7 +40,7 @@ with open(f1, "rb") as beg: # For Beginning
 with open(f2, "rb") as mid: # For Second PAK File
     if os.path.isfile(folder2+'/'+repack2): # Check to see if the repack.rep file exists
         os.remove(folder2+'/'+repack2) # If it does delete it
-        print(repack2, 'deleted in', folder1) # Print the result
+        print(repack2, 'deleted in', folder2) # Print the result
     magic2 = mid.read(4) # GRES is the magic
     unk2 = mid.read(4) # Not sure of the following bytes
     fileC2 = mid.read(4) # File Count
