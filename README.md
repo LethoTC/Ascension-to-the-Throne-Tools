@@ -7,15 +7,25 @@ compress it back correctly. If a binary file receives a modification make sure i
 as long as the mods you make do not alter the structure. 
 
 The archive formats for the PAK files go like this:
+
 Initial 12 bytes:
+
 Magic 4
+
 Unk 4
+
 File Count 4
+
 File Metadata 136 bytes each:
+
 File Header is 136 bytes but only the filename and the last 8 bytes seem to be used.
+
 It may be extra padding but the filenames need to stay the same.
+
 Filename/Padding 128 bytes
+
 Offset to File Data 4
+
 File Size 4.
 
 This was made by myself, LethoTC or on Discord I go by TheIllusiveFlowerTC.
