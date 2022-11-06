@@ -6,7 +6,7 @@ They can become smaller, larger, or remain the same. The important part is
 that if you modify the files they need to retain the original structure not the original size. The Unpacker and Repacker will extract and
 repack correctly so long as you modify the extracted files correctly. That means if the file is compressed and you decompress it you need to
 compress it back correctly. If a binary file receives a modification make sure it is done properly. File size is pretty much irrelevant with these scripts
-as long as the mods you make do not alter the structure. 
+as long as the mods you make do not alter the structure. These scripts were made during the early days of learning Python, future scripts will be written better I believe.
 
 The archive format for these PAK files go like this:
 
