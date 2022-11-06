@@ -30,4 +30,4 @@ Offset to File Data 4
 
 File Size 4.
 
-This was made by myself, LethoTC or on Discord I go by TheIllusiveFlowerTC.
+This was made by myself, LethoTC or on Discord I go by TheIllusiveFlowerTC. If you encounter any problems my Discord account is TheIllusiveFlowerTC#9220. Send a friend request for questions and possible help if you would like to.
