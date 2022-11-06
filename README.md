@@ -8,7 +8,7 @@ repack correctly so long as you modify the extracted files correctly. That means
 compress it back correctly. If a binary file receives a modification make sure it is done properly. File size is pretty much irrelevant with these scripts
 as long as the mods you make do not alter the structure. 
 
-The archive formats for the PAK files go like this:
+The archive format for these PAK files go like this:
 
 Initial 12 bytes:
 
