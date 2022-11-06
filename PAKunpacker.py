@@ -31,7 +31,7 @@ with open(f1, "rb") as beg: # For Beginning
         fileO = beg.read(4) # File Offsets
         fileS = beg.read(4) # File Sizes
         fileB = beg.tell()  # Current Position   
-        beg.seek(int.from_bytes(fileO, "little"), os.SEEK_SET) # Seek the offset
+        beg.seek(int.from_bytes(fileO, "little")) # Seek the offset
         fileByt = beg.read(int.from_bytes(fileS, "little")) # Read the bytes by the file size
         with open(os.path.join(folder1, nFile), "wb") as end: # For End
             end.write(fileByt) # Write the file data
@@ -54,7 +54,7 @@ with open(f2, "rb") as mid: # For Second PAK File
         fileO2 = mid.read(4) # File Offsets
         fileS2 = mid.read(4) # File Sizes
         fileB2 = mid.tell()  # Current Position   
-        mid.seek(int.from_bytes(fileO2, "little"), os.SEEK_SET) # Seek the offset
+        mid.seek(int.from_bytes(fileO2, "little")) # Seek the offset
         fileByt2 = mid.read(int.from_bytes(fileS2, "little")) # Read the bytes by the file size
         with open(os.path.join(folder2, nFile2), "wb") as fin: # For End
             fin.write(fileByt2) # Write the file data
